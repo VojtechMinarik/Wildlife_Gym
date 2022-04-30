@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.15" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/about_button_web.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/animal_button_difference.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/animal_button_difference_off.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/animal_button_encyclopedia.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/animal_button_memory.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/animal_button_memory_off.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/animal_button_poem.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/animal_button_quiz.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/animal_button_quiz_off.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/animal_button_shadow.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/animal_button_shadow_off.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/animal_button_video.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/animal_picture_crocodile_00.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/app_button_back.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/intro_app_button_about.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/intro_app_button_big.xml" value="0.271875" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/intro_app_button_settings.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/intro_app_button_start.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/intro_button_about.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/intro_button_settings.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/intro_button_start.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/memory_button_card_back.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/memory_button_card_flamingo_01.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/memory_button_card_flamingo_02.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/memory_button_card_flamingo_03.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/memory_button_card_flamingo_04.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/memory_button_card_flamingo_05.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/memory_button_card_flamingo_06.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/menu_button_cancer.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/menu_button_crocodile.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/menu_button_dolphin.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/menu_button_flamengo.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/menu_button_penguin.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/menu_button_stork.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/poem_button_play.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/settings_button_back.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/settings_button_back_off.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/settings_button_erase.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/settings_button_erase_slim.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/settings_button_music.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/settings_button_music_off.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/settings_button_sound.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/drawable/settings_button_sound_off.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/activity_difference.xml" value="0.152" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/activity_encyclopedia.xml" value="0.264" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/activity_main.xml" value="0.21957671957671956" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/activity_main_land.xml" value="0.21957671957671956" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/activity_memory.xml" value="0.21957671957671956" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/activity_poem.xml" value="0.21957671957671956" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/activity_quiz.xml" value="0.21957671957671956" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/activity_shadow.xml" value="0.21957671957671956" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/activity_video.xml" value="0.21957671957671956" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/fragment_about.xml" value="0.176" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/fragment_animal.xml" value="0.21957671957671956" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/fragment_intro.xml" value="0.21957671957671956" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/fragment_menu.xml" value="0.176" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout-land/fragment_settings.xml" value="0.2" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout/activity_difference.xml" value="0.264" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout/activity_encyclopedia.xml" value="0.213768115942029" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout/activity_memory.xml" value="0.22192028985507245" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout/activity_poem.xml" value="0.2259963768115942" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout/activity_video.xml" value="0.2259963768115942" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout/fragment_about.xml" value="0.264" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout/fragment_animal.xml" value="0.2128623188405797" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout/fragment_intro.xml" value="0.2" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout/fragment_intro2.xml" value="0.21875" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout/fragment_menu.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/layout/fragment_settings.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/Vojta/AndroidStudioProjects/WildlifeGym/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

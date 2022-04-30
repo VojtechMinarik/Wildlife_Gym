@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <layer-list>
+            <item android:drawable="@drawable/memory_button_card_flamingo_03_press" />
+        </layer-list>
+    </item> <!-- pressed -->
+    <item android:state_focused="true">
+        <layer-list>
+            <item android:drawable="@drawable/memory_button_card_flamingo_03_rest" />
+        </layer-list>
+    </item> <!-- focused -->
+    <item>
+        <layer-list>
+            <item android:drawable="@drawable/memory_button_card_flamingo_03_rest" />
+        </layer-list>
+    </item><!-- default -->
+</selector>
