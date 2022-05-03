@@ -87,7 +87,8 @@ class MemoryActivity : MainActivity() {
                     }
                 }
                 if (finished) {
-                    Toast.makeText(applicationContext,"Card game finished!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Hotovo!", Toast.LENGTH_SHORT).show()
+                    finish()
                 }
             }
         }

@@ -3,6 +3,7 @@ package com.example.wildlifegym
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,11 +11,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
-import com.example.wildlifegym.animalactivities.EncyclopediaActivity
-import com.example.wildlifegym.animalactivities.MemoryActivity
-import com.example.wildlifegym.animalactivities.PoemActivity
-import com.example.wildlifegym.animalactivities.VideoActivity
+import com.example.wildlifegym.animalactivities.*
 import com.example.wildlifegym.utils.Animal
 import com.example.wildlifegym.utils.AppDatabase
 
@@ -37,7 +36,6 @@ class AnimalFragment : Fragment() {
         Thread {
             val db = AppDatabase.getDatabase(this.requireContext())
 
-            //val animalDao = db.databaseDao()
             points = db.databaseDao().getPoints(animal!!)
 
             val animalMemory = db.databaseDao().getResMemory(animal)
@@ -124,6 +122,11 @@ class AnimalFragment : Fragment() {
                     db.databaseDao().updateAnimal(Animal(db.databaseDao().getId(animal), animal, db.databaseDao().getPoints(animal) + 1, db.databaseDao().getResQuiz(animal), db.databaseDao().getResShadow(animal), 1, db.databaseDao().getResMemory(animal)))
                 }
             }.start()
+
+            (activity as MainActivity).ButtonSound()
+            val intent = Intent(context, DifferenceActivity::class.java)
+            intent.putExtra("animal", animal)
+            startActivity(intent)
         }
 
         val buttonanimalshadow = view.findViewById<ImageButton>(R.id.image_button_animal_shadow)
@@ -137,6 +140,11 @@ class AnimalFragment : Fragment() {
                     db.databaseDao().updateAnimal(Animal(db.databaseDao().getId(animal), animal, db.databaseDao().getPoints(animal) + 1, db.databaseDao().getResQuiz(animal), 1, db.databaseDao().getResDifference(animal), db.databaseDao().getResMemory(animal)))
                 }
             }.start()
+
+            (activity as MainActivity).ButtonSound()
+            val intent = Intent(context, ShadowActivity::class.java)
+            intent.putExtra("animal", animal)
+            startActivity(intent)
         }
 
         val buttonanimalquiz = view.findViewById<ImageButton>(R.id.image_button_animal_quiz)
@@ -150,6 +158,11 @@ class AnimalFragment : Fragment() {
                     db.databaseDao().updateAnimal(Animal(db.databaseDao().getId(animal), animal, db.databaseDao().getPoints(animal) + 1, 1, db.databaseDao().getResShadow(animal), db.databaseDao().getResDifference(animal), db.databaseDao().getResMemory(animal)))
                 }
             }.start()
+
+            (activity as MainActivity).ButtonSound()
+            val intent = Intent(context, QuizActivity::class.java)
+            intent.putExtra("animal", animal)
+            startActivity(intent)
         }
 
         val buttonanimalvideo = view.findViewById<ImageButton>(R.id.image_button_animal_video)
