@@ -3,6 +3,7 @@ package com.example.wildlifegym.animalactivities
 import android.os.Build
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.wildlifegym.MainActivity
 import com.example.wildlifegym.R
@@ -25,5 +26,13 @@ class EncyclopediaActivity : MainActivity() {
         }
 
         val animal = intent.getStringExtra("animal")
+
+        val buttons = arrayOf(findViewById<ImageButton>(R.id.image_button_encyclopedia_01), findViewById(R.id.image_button_encyclopedia_02), findViewById(R.id.image_button_encyclopedia_03), findViewById(R.id.image_button_encyclopedia_04))
+
+        for(i in 0..3) {
+            buttons[i].setOnClickListener {
+                Toast.makeText(applicationContext,"Stisknuto!", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
