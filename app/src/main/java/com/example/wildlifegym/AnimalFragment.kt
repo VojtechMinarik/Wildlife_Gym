@@ -33,7 +33,7 @@ class AnimalFragment : Fragment() {
 
         sharedPreferences = requireContext().getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
 
-        Thread {
+        /*Thread {
             val db = AppDatabase.getDatabase(this.requireContext())
 
             points = db.databaseDao().getPoints(animal!!)
@@ -79,7 +79,7 @@ class AnimalFragment : Fragment() {
                     buttonanimalquiz.setImageResource(resources.getIdentifier("animal_button_quiz_off", "drawable", context?.packageName))
                 }
             }
-        }.start()
+        }.start()*/
 
         val buttonanimalback = view.findViewById<ImageButton>(R.id.image_button_animal_back)
         buttonanimalback.setOnClickListener {
@@ -97,13 +97,13 @@ class AnimalFragment : Fragment() {
         buttonanimalmemory.setOnClickListener {
             (activity as MainActivity).ButtonSound()
 
-            Thread {
+            /*Thread {
                 val db = AppDatabase.getDatabase(this.requireContext())
                 val animalMemory = db.databaseDao().getResMemory(animal!!)
                 if (animalMemory == 0) {
                     db.databaseDao().updateAnimal(Animal(db.databaseDao().getId(animal), animal, db.databaseDao().getPoints(animal) + 1, db.databaseDao().getResQuiz(animal), db.databaseDao().getResShadow(animal), db.databaseDao().getResDifference(animal), 1))
                 }
-            }.start()
+            }.start()*/
 
             (activity as MainActivity).ButtonSound()
             val intent = Intent(context, MemoryActivity::class.java)
@@ -115,13 +115,13 @@ class AnimalFragment : Fragment() {
         buttonanimaldifference.setOnClickListener {
             (activity as MainActivity).ButtonSound()
 
-            Thread {
+            /*Thread {
                 val db = AppDatabase.getDatabase(this.requireContext())
                 val animalDifference = db.databaseDao().getResDifference(animal!!)
                 if (animalDifference == 0) {
                     db.databaseDao().updateAnimal(Animal(db.databaseDao().getId(animal), animal, db.databaseDao().getPoints(animal) + 1, db.databaseDao().getResQuiz(animal), db.databaseDao().getResShadow(animal), 1, db.databaseDao().getResMemory(animal)))
                 }
-            }.start()
+            }.start()*/
 
             (activity as MainActivity).ButtonSound()
             val intent = Intent(context, DifferenceActivity::class.java)
@@ -133,13 +133,13 @@ class AnimalFragment : Fragment() {
         buttonanimalshadow.setOnClickListener {
             (activity as MainActivity).ButtonSound()
 
-            Thread {
+            /*Thread {
                 val db = AppDatabase.getDatabase(this.requireContext())
                 val animalShadow = db.databaseDao().getResShadow(animal!!)
                 if (animalShadow == 0) {
                     db.databaseDao().updateAnimal(Animal(db.databaseDao().getId(animal), animal, db.databaseDao().getPoints(animal) + 1, db.databaseDao().getResQuiz(animal), 1, db.databaseDao().getResDifference(animal), db.databaseDao().getResMemory(animal)))
                 }
-            }.start()
+            }.start()*/
 
             (activity as MainActivity).ButtonSound()
             val intent = Intent(context, ShadowActivity::class.java)
@@ -151,13 +151,13 @@ class AnimalFragment : Fragment() {
         buttonanimalquiz.setOnClickListener {
             (activity as MainActivity).ButtonSound()
 
-            Thread {
+            /*Thread {
                 val db = AppDatabase.getDatabase(this.requireContext())
                 val animalQuiz = db.databaseDao().getResQuiz(animal!!)
                 if (animalQuiz == 0) {
                     db.databaseDao().updateAnimal(Animal(db.databaseDao().getId(animal), animal, db.databaseDao().getPoints(animal) + 1, 1, db.databaseDao().getResShadow(animal), db.databaseDao().getResDifference(animal), db.databaseDao().getResMemory(animal)))
                 }
-            }.start()
+            }.start()*/
 
             (activity as MainActivity).ButtonSound()
             val intent = Intent(context, QuizActivity::class.java)
@@ -192,4 +192,66 @@ class AnimalFragment : Fragment() {
         return view
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        val animal = arguments?.getString("animal")
+        val imageanimalview = view?.findViewById<ImageView>(R.id.image_view_animal)
+
+        Thread {
+            val db = AppDatabase.getDatabase(this.requireContext())
+
+            val points = db.databaseDao().getPoints(animal!!)
+
+            val animalMemory = db.databaseDao().getResMemory(animal)
+            val animalDifference = db.databaseDao().getResDifference(animal)
+            val animalShadow = db.databaseDao().getResShadow(animal)
+            val animalQuiz = db.databaseDao().getResQuiz(animal)
+
+            activity?.runOnUiThread {
+                when (animal) {
+                    "crocodile" ->
+                        imageanimalview?.setImageResource(resources.getIdentifier("animal_picture_crocodile_0$points", "drawable", context?.packageName))
+                    "stork" ->
+                        imageanimalview?.setImageResource(resources.getIdentifier("animal_picture_stork_0$points", "drawable", context?.packageName))
+                    "cancer" ->
+                        imageanimalview?.setImageResource(resources.getIdentifier("animal_picture_cancer_0$points", "drawable", context?.packageName))
+                    "penguin" ->
+                        imageanimalview?.setImageResource(resources.getIdentifier("animal_picture_penguin_0$points", "drawable", context?.packageName))
+                    "flamengo" ->
+                        imageanimalview?.setImageResource(resources.getIdentifier("animal_picture_flamengo_0$points", "drawable", context?.packageName))
+                    "dolphin" ->
+                        imageanimalview?.setImageResource(resources.getIdentifier("animal_picture_dolphin_0$points", "drawable", context?.packageName))
+                    else -> {
+                        imageanimalview?.setImageResource(R.drawable.animal_picture_cancer_00)
+                    }
+                }
+
+                val buttonanimalmemory = view?.findViewById<ImageButton>(R.id.image_button_animal_memory)
+                if (animalMemory == 0) {
+                    buttonanimalmemory!!.setImageResource(resources.getIdentifier("animal_button_memory_off", "drawable", context?.packageName))
+                } else {
+                    buttonanimalmemory!!.setImageResource(resources.getIdentifier("animal_button_memory", "drawable", context?.packageName))
+                }
+                val buttonanimaldifference = view?.findViewById<ImageButton>(R.id.image_button_animal_difference)
+                if (animalDifference == 0) {
+                    buttonanimaldifference!!.setImageResource(resources.getIdentifier("animal_button_difference_off", "drawable", context?.packageName))
+                } else {
+                    buttonanimaldifference!!.setImageResource(resources.getIdentifier("animal_button_difference", "drawable", context?.packageName))
+                }
+                val buttonanimalshadow = view?.findViewById<ImageButton>(R.id.image_button_animal_shadow)
+                if (animalShadow == 0) {
+                    buttonanimalshadow!!.setImageResource(resources.getIdentifier("animal_button_shadow_off", "drawable", context?.packageName))
+                } else {
+                    buttonanimalshadow!!.setImageResource(resources.getIdentifier("animal_button_shadow", "drawable", context?.packageName))
+                }
+                val buttonanimalquiz = view?.findViewById<ImageButton>(R.id.image_button_animal_quiz)
+                if (animalQuiz == 0) {
+                    buttonanimalquiz!!.setImageResource(resources.getIdentifier("animal_button_quiz_off", "drawable", context?.packageName))
+                } else {
+                    buttonanimalquiz!!.setImageResource(resources.getIdentifier("animal_button_quiz", "drawable", context?.packageName))
+                }
+            }
+        }.start()
+    }
 }
