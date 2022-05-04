@@ -46,6 +46,12 @@ class DifferenceActivity : MainActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.R)
+    override fun onResume() {
+        super.onResume()
+        hideSystemUI()
+    }
+
     private fun addpoints(animal: String, currgame: String, pointmemory: Int, pointdifference: Int, pointshadow: Int, pointquiz: Int) {
         Thread {
             val db = AppDatabase.getDatabase(this)

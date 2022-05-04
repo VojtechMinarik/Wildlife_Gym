@@ -1,14 +1,10 @@
 package com.example.wildlifegym
 
-import android.content.Context
-import android.content.SharedPreferences
-import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 

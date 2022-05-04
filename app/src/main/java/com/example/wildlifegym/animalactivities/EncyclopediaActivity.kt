@@ -14,8 +14,6 @@ class EncyclopediaActivity : MainActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_encyclopedia)
 
-        //requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-
         hideSystemUI()
 
         val buttonmemoryback = this.findViewById<ImageButton>(R.id.image_button_memory_back)
@@ -35,4 +33,17 @@ class EncyclopediaActivity : MainActivity() {
             }
         }
     }
+
+    @RequiresApi(Build.VERSION_CODES.R)
+    override fun onResume() {
+        super.onResume()
+        hideSystemUI()
+    }
+
+    @RequiresApi(Build.VERSION_CODES.R)
+    override fun onStart() {
+        super.onStart()
+        hideSystemUI()
+    }
+
 }
