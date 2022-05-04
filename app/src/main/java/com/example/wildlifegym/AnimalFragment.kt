@@ -14,7 +14,6 @@ import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import com.example.wildlifegym.animalactivities.*
-import com.example.wildlifegym.utils.Animal
 import com.example.wildlifegym.utils.AppDatabase
 
 
@@ -192,6 +191,7 @@ class AnimalFragment : Fragment() {
         return view
     }
 
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onResume() {
         super.onResume()
 

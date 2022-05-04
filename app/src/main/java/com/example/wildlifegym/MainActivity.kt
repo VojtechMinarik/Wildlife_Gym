@@ -44,6 +44,12 @@ open class MainActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.R)
+    override fun onResume() {
+        super.onResume()
+        hideSystemUI()
+    }
+
     fun PlayBackgroundSound() {
         val intent = Intent(this@MainActivity, BackgroundMusicService::class.java)
         startService(intent)
