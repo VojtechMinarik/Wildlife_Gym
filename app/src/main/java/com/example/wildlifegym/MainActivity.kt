@@ -1,10 +1,8 @@
 package com.example.wildlifegym
 
 import android.content.Context
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.annotation.RequiresApi
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -13,6 +11,7 @@ import androidx.navigation.fragment.NavHostFragment
 import android.content.Intent
 import android.content.SharedPreferences
 import android.media.MediaPlayer
+import com.example.wildlifegym.services.BackgroundMusicService
 
 
 open class MainActivity : AppCompatActivity() {
@@ -21,12 +20,9 @@ open class MainActivity : AppCompatActivity() {
 
     lateinit var sharedPreferences: SharedPreferences
 
-    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -34,39 +30,38 @@ open class MainActivity : AppCompatActivity() {
 
         hideSystemUI()
 
-        sharedPreferences = this.getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
-
-        //val musicPlayer: MediaPlayer? = MediaPlayer.create(this, R.raw.happy_mistake)
-        //musicPlayer?.start()
-        val musicoff = sharedPreferences.getBoolean("MUSICOFF", false)
-        if (!musicoff) {
-            PlayBackgroundSound()
-        }
+        playBackgroundSound()
     }
 
-    @RequiresApi(Build.VERSION_CODES.R)
     override fun onResume() {
         super.onResume()
         hideSystemUI()
     }
 
-    fun PlayBackgroundSound() {
+    fun playBackgroundSound() {
+        sharedPreferences = this.getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        if (sharedPreferences.getBoolean("MUSICOFF", false)) {
+            return
+        }
         val intent = Intent(this@MainActivity, BackgroundMusicService::class.java)
         startService(intent)
     }
 
-    fun StopBackgroundSound() {
+    fun stopBackgroundSound() {
         val intent = Intent(this@MainActivity, BackgroundMusicService::class.java)
         stopService(intent)
     }
 
-    fun ButtonSound() {
+    fun makeSound(soundName: String) {
         sharedPreferences = this.getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
-        val soundoff = sharedPreferences.getBoolean("SOUNDOFF", false)
-        //val mediaPlayer: MediaPlayer = MediaPlayer.create(this, R.raw.click)
-        if (!soundoff) {
-            //mediaPlayer.start()
-            playSound(R.raw.click)
+        if (sharedPreferences.getBoolean("SOUNDOFF", false)) {
+            return
+        }
+        when (soundName) {
+            "button" -> playSound(R.raw.buttonclick)
+            "rightanswer" -> playSound(R.raw.rightanswer)
+            "wronganswer" -> playSound(R.raw.badanswer)
+            else -> return
         }
     }
 
@@ -75,7 +70,7 @@ open class MainActivity : AppCompatActivity() {
         setOnCompletionListener { reset() }
     }
 
-    fun playSound(rawResId: Int) {
+    private fun playSound(rawResId: Int) {
         val assetFileDescriptor = this.resources.openRawResourceFd(rawResId) ?: return
         mediaPlayer.run {
             reset()
@@ -84,19 +79,13 @@ open class MainActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * This function hides the navigation bar
-     */
-    @RequiresApi(Build.VERSION_CODES.R)
     fun hideSystemUI() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         WindowInsetsControllerCompat(window,
             window.decorView.findViewById(android.R.id.content)).let { controller ->
             controller.hide(WindowInsetsCompat.Type.systemBars())
 
-            // When the screen is swiped up at the bottom
-            // of the application, the navigationBar shall
-            // appear for some time
+
             controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
     }

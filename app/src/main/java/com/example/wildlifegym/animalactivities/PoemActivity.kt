@@ -19,7 +19,7 @@ class PoemActivity : MainActivity() {
 
         val buttonpoemback = this.findViewById<ImageButton>(R.id.image_button_poem_back)
         buttonpoemback.setOnClickListener {
-            ButtonSound()
+            makeSound("button")
 
             finish()
         }
@@ -28,7 +28,7 @@ class PoemActivity : MainActivity() {
 
         val buttonpoemplay = this.findViewById<ImageButton>(R.id.image_button_poem_play)
         buttonpoemplay.setOnClickListener {
-            ButtonSound()
+            makeSound("button")
 
             when (animal) {
                 "crocodile" -> playPoem(R.raw.crocodilemp3)

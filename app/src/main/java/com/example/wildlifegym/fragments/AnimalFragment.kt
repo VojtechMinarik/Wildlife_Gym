@@ -1,4 +1,4 @@
-package com.example.wildlifegym
+package com.example.wildlifegym.fragments
 
 import android.content.Context
 import android.content.Intent
@@ -13,6 +13,8 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
+import com.example.wildlifegym.MainActivity
+import com.example.wildlifegym.R
 import com.example.wildlifegym.animalactivities.*
 import com.example.wildlifegym.utils.AppDatabase
 
@@ -82,7 +84,7 @@ class AnimalFragment : Fragment() {
 
         val buttonanimalback = view.findViewById<ImageButton>(R.id.image_button_animal_back)
         buttonanimalback.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
             findNavController().navigate(R.id.action_animalFragment_to_menuFragment)
         }
 
@@ -94,7 +96,7 @@ class AnimalFragment : Fragment() {
 
         val buttonanimalmemory = view.findViewById<ImageButton>(R.id.image_button_animal_memory)
         buttonanimalmemory.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
 
             /*Thread {
                 val db = AppDatabase.getDatabase(this.requireContext())
@@ -104,7 +106,7 @@ class AnimalFragment : Fragment() {
                 }
             }.start()*/
 
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
             val intent = Intent(context, MemoryActivity::class.java)
             intent.putExtra("animal", animal)
             startActivity(intent)
@@ -112,7 +114,7 @@ class AnimalFragment : Fragment() {
 
         val buttonanimaldifference = view.findViewById<ImageButton>(R.id.image_button_animal_difference)
         buttonanimaldifference.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
 
             /*Thread {
                 val db = AppDatabase.getDatabase(this.requireContext())
@@ -122,7 +124,7 @@ class AnimalFragment : Fragment() {
                 }
             }.start()*/
 
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
             val intent = Intent(context, DifferenceActivity::class.java)
             intent.putExtra("animal", animal)
             startActivity(intent)
@@ -130,7 +132,7 @@ class AnimalFragment : Fragment() {
 
         val buttonanimalshadow = view.findViewById<ImageButton>(R.id.image_button_animal_shadow)
         buttonanimalshadow.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
 
             /*Thread {
                 val db = AppDatabase.getDatabase(this.requireContext())
@@ -140,7 +142,7 @@ class AnimalFragment : Fragment() {
                 }
             }.start()*/
 
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
             val intent = Intent(context, ShadowActivity::class.java)
             intent.putExtra("animal", animal)
             startActivity(intent)
@@ -148,7 +150,7 @@ class AnimalFragment : Fragment() {
 
         val buttonanimalquiz = view.findViewById<ImageButton>(R.id.image_button_animal_quiz)
         buttonanimalquiz.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
 
             /*Thread {
                 val db = AppDatabase.getDatabase(this.requireContext())
@@ -158,7 +160,7 @@ class AnimalFragment : Fragment() {
                 }
             }.start()*/
 
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
             val intent = Intent(context, QuizActivity::class.java)
             intent.putExtra("animal", animal)
             startActivity(intent)
@@ -166,7 +168,7 @@ class AnimalFragment : Fragment() {
 
         val buttonanimalvideo = view.findViewById<ImageButton>(R.id.image_button_animal_video)
         buttonanimalvideo.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
             val intent = Intent(context, VideoActivity::class.java)
             intent.putExtra("animal", animal)
             startActivity(intent)
@@ -174,7 +176,7 @@ class AnimalFragment : Fragment() {
 
         val buttonanimalpoem = view.findViewById<ImageButton>(R.id.image_button_animal_poem)
         buttonanimalpoem.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
             val intent = Intent(context, PoemActivity::class.java)
             intent.putExtra("animal", animal)
             startActivity(intent)
@@ -182,7 +184,7 @@ class AnimalFragment : Fragment() {
 
         val buttonanimalencyclopedia = view.findViewById<ImageButton>(R.id.image_button_animal_encyclopedia)
         buttonanimalencyclopedia.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
             val intent = Intent(context, EncyclopediaActivity::class.java)
             intent.putExtra("animal", animal)
             startActivity(intent)

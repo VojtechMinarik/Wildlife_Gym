@@ -28,7 +28,7 @@ class VideoActivity : MainActivity() {
 
         val buttonaboutback = this.findViewById<ImageButton>(R.id.image_button_about_back)
         buttonaboutback.setOnClickListener {
-            ButtonSound()
+            makeSound("button")
 
             finish()
         }

@@ -21,7 +21,7 @@ class QuizActivity : MainActivity() {
 
         val buttonmemoryback = this.findViewById<ImageButton>(R.id.image_button_memory_back)
         buttonmemoryback.setOnClickListener {
-            ButtonSound()
+            makeSound("button")
             finish()
         }
 

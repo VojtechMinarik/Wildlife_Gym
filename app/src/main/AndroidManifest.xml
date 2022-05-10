@@ -42,7 +42,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".BackgroundMusicService" />
+        <service android:name=".services.BackgroundMusicService" />
     </application>
 
 </manifest>

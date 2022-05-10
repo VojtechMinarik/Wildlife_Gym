@@ -20,7 +20,7 @@ class MemoryActivity : MainActivity() {
 
         val buttonmemoryback = this.findViewById<ImageButton>(R.id.image_button_memory_back)
         buttonmemoryback.setOnClickListener {
-            ButtonSound()
+            makeSound("button")
 
             finish()
         }
@@ -55,7 +55,7 @@ class MemoryActivity : MainActivity() {
             buttons[i].setImageResource(cardBack)
             buttons[i].contentDescription = "cardBack"
             buttons[i].setOnClickListener {
-                ButtonSound()
+                makeSound("button")
 
                 if (buttons[i].contentDescription == "cardBack" && !turnOver) {
                     buttons[i].setImageResource(images[i])

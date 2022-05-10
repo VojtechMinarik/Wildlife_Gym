@@ -1,9 +1,10 @@
-package com.example.wildlifegym
+package com.example.wildlifegym.services
 
 import android.app.Service
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.IBinder
+import com.example.wildlifegym.R
 
 class BackgroundMusicService : Service() {
     internal lateinit var player: MediaPlayer
@@ -53,5 +54,13 @@ class BackgroundMusicService : Service() {
 
     companion object {
         private val TAG: String? = null
+    }
+
+    fun lowerVolume() {
+        player.setVolume(50f, 50f)
+    }
+
+    fun raiseVolume() {
+        player.setVolume(100f, 100f)
     }
 }

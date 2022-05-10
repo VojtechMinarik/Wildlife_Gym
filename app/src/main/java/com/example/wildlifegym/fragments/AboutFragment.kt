@@ -1,9 +1,8 @@
-package com.example.wildlifegym
+package com.example.wildlifegym.fragments
 
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,6 +11,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
+import com.example.wildlifegym.MainActivity
+import com.example.wildlifegym.R
 
 
 class AboutFragment : Fragment() {
@@ -28,7 +29,7 @@ class AboutFragment : Fragment() {
 
         val buttonaboutback = view.findViewById<ImageButton>(R.id.image_button_about_back)
         buttonaboutback.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
 
             findNavController().navigate(R.id.action_aboutFragment_to_introFragment)
         }
@@ -40,7 +41,7 @@ class AboutFragment : Fragment() {
 
         val buttonaboutweb = view.findViewById<ImageButton>(R.id.image_button_about_web)
         buttonaboutweb.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
 
             val url = "https://www.mammacentrum.com"
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))

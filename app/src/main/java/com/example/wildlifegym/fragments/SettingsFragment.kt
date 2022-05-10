@@ -1,4 +1,4 @@
-package com.example.wildlifegym
+package com.example.wildlifegym.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
+import com.example.wildlifegym.MainActivity
+import com.example.wildlifegym.R
 import com.example.wildlifegym.utils.Animal
 import com.example.wildlifegym.utils.AppDatabase
 
@@ -33,7 +35,7 @@ class SettingsFragment : Fragment() {
         val buttonsettingserase = view.findViewById<ImageButton>(R.id.image_button_settings_erase)
 
         buttonsettingsback.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
             findNavController().navigate(R.id.action_settingsFragment_to_introFragment)
         }
 
@@ -57,7 +59,7 @@ class SettingsFragment : Fragment() {
         }
 
         buttonsettingsmusic.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
 
             val editor: SharedPreferences.Editor = sharedPreferences.edit()
             if (musicoff) {
@@ -71,14 +73,14 @@ class SettingsFragment : Fragment() {
             }
             editor.apply()
             if (!musicoff) {
-                (activity as MainActivity).PlayBackgroundSound()
+                (activity as MainActivity).playBackgroundSound()
             } else {
-                (activity as MainActivity).StopBackgroundSound()
+                (activity as MainActivity).stopBackgroundSound()
             }
         }
 
         buttonsettingssound.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
 
             val editor: SharedPreferences.Editor = sharedPreferences.edit()
             if (soundoff) {
@@ -94,7 +96,7 @@ class SettingsFragment : Fragment() {
         }
 
         buttonsettingsbackswitch.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
 
             val editor: SharedPreferences.Editor = sharedPreferences.edit()
             if (backoff) {
@@ -112,7 +114,7 @@ class SettingsFragment : Fragment() {
         }
 
         buttonsettingserase.setOnClickListener {
-            (activity as MainActivity).ButtonSound()
+            (activity as MainActivity).makeSound("button")
 
             Thread {
                 val db = AppDatabase.getDatabase(this.requireContext())

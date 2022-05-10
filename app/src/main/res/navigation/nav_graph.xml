@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/introFragment"
-        android:name="com.example.wildlifegym.IntroFragment"
+        android:name="com.example.wildlifegym.fragments.IntroFragment"
         android:label="fragment_intro"
         tools:layout="@layout/fragment_intro" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.example.wildlifegym.MenuFragment"
+        android:name="com.example.wildlifegym.fragments.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/animalFragment"
-        android:name="com.example.wildlifegym.AnimalFragment"
+        android:name="com.example.wildlifegym.fragments.AnimalFragment"
         android:label="fragment_animal"
         tools:layout="@layout/fragment_animal" >
         <action
@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.example.wildlifegym.AboutFragment"
+        android:name="com.example.wildlifegym.fragments.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" >
         <action
@@ -80,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.wildlifegym.SettingsFragment"
+        android:name="com.example.wildlifegym.fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
