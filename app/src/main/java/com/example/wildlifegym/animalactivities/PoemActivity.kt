@@ -15,7 +15,7 @@ class PoemActivity : MainActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_poem)
 
-        hideSystemUI()
+        hideNavigationBar()
 
         val buttonpoemback = this.findViewById<ImageButton>(R.id.image_button_poem_back)
         buttonpoemback.setOnClickListener {

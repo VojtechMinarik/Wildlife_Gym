@@ -24,7 +24,7 @@ class VideoActivity : MainActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video)
 
-        hideSystemUI()
+        hideNavigationBar()
 
         val buttonaboutback = this.findViewById<ImageButton>(R.id.image_button_about_back)
         buttonaboutback.setOnClickListener {
@@ -68,7 +68,7 @@ class VideoActivity : MainActivity() {
         // starting the video
         simpleVideoView!!.start()
 
-        hideSystemUI()
+        hideNavigationBar()
 
     }
 

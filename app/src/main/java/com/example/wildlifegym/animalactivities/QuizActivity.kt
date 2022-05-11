@@ -17,7 +17,7 @@ class QuizActivity : MainActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
 
-        hideSystemUI()
+        hideNavigationBar()
 
         val buttonmemoryback = this.findViewById<ImageButton>(R.id.image_button_memory_back)
         buttonmemoryback.setOnClickListener {
@@ -38,14 +38,17 @@ class QuizActivity : MainActivity() {
                 if (i == answers[round]) {
                     if (round == 2) {
                         Toast.makeText(applicationContext,"Hotovo!", Toast.LENGTH_SHORT).show()
+                        makeSound("rightanswer")
                         addpoints(animal!!, "quiz", 0,0,0,1)
                         finish()
                     } else {
                         round++
+                        makeSound("rightanswer")
                         changeQuestion("flamingo", round)
                     }
                 } else {
                     Toast.makeText(applicationContext,"Špatně!", Toast.LENGTH_SHORT).show()
+                    makeSound("wronganswer")
                     finish()
                 }
             }

@@ -11,13 +11,12 @@ import com.example.wildlifegym.R
 import com.example.wildlifegym.utils.Animal
 import com.example.wildlifegym.utils.AppDatabase
 
-@RequiresApi(Build.VERSION_CODES.R)
 class DifferenceActivity : MainActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_difference)
 
-        hideSystemUI()
+        hideNavigationBar()
 
         val buttonmemoryback = this.findViewById<ImageButton>(R.id.image_button_memory_back)
         buttonmemoryback.setOnClickListener {
@@ -39,6 +38,7 @@ class DifferenceActivity : MainActivity() {
 
                 if (complete > 4) {
                     Toast.makeText(applicationContext,"Hotovo!", Toast.LENGTH_SHORT).show()
+                    makeSound("rightanswer")
                     addpoints(animal!!, "difference", 0,1,0,0)
                     finish()
                 }
@@ -46,10 +46,9 @@ class DifferenceActivity : MainActivity() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.R)
     override fun onResume() {
         super.onResume()
-        hideSystemUI()
+        hideNavigationBar()
     }
 
     private fun addpoints(animal: String, currgame: String, pointmemory: Int, pointdifference: Int, pointshadow: Int, pointquiz: Int) {

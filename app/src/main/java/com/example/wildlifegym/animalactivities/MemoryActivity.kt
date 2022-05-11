@@ -16,7 +16,7 @@ class MemoryActivity : MainActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_memory)
 
-        hideSystemUI()
+        hideNavigationBar()
 
         val buttonmemoryback = this.findViewById<ImageButton>(R.id.image_button_memory_back)
         buttonmemoryback.setOnClickListener {
@@ -90,6 +90,7 @@ class MemoryActivity : MainActivity() {
                 }
                 if (finished) {
                     Toast.makeText(applicationContext,"Hotovo!", Toast.LENGTH_SHORT).show()
+                    makeSound("rightanswer")
                     addpoints(animal!!, "memory", 1,0,0,0)
                     finish()
                 }

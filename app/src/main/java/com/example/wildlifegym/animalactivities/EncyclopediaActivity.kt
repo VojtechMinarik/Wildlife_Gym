@@ -8,13 +8,12 @@ import androidx.annotation.RequiresApi
 import com.example.wildlifegym.MainActivity
 import com.example.wildlifegym.R
 
-@RequiresApi(Build.VERSION_CODES.R)
 class EncyclopediaActivity : MainActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_encyclopedia)
 
-        hideSystemUI()
+        hideNavigationBar()
 
         val buttonmemoryback = this.findViewById<ImageButton>(R.id.image_button_memory_back)
         buttonmemoryback.setOnClickListener {
@@ -34,16 +33,14 @@ class EncyclopediaActivity : MainActivity() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.R)
     override fun onResume() {
         super.onResume()
-        hideSystemUI()
+        hideNavigationBar()
     }
 
-    @RequiresApi(Build.VERSION_CODES.R)
     override fun onStart() {
         super.onStart()
-        hideSystemUI()
+        hideNavigationBar()
     }
 
 }

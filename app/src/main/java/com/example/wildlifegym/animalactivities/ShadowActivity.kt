@@ -17,7 +17,7 @@ class ShadowActivity : MainActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shadow)
 
-        hideSystemUI()
+        hideNavigationBar()
 
         val buttonmemoryback = this.findViewById<ImageButton>(R.id.image_button_memory_back)
         buttonmemoryback.setOnClickListener {
@@ -34,10 +34,12 @@ class ShadowActivity : MainActivity() {
             buttons[i].setOnClickListener {
                 if (i == 2) {
                     Toast.makeText(applicationContext,"Hotovo!", Toast.LENGTH_SHORT).show()
+                    makeSound("rightanswer")
                     addpoints(animal!!, "shadow", 0,0,1,0)
                     finish()
                 } else {
                     Toast.makeText(applicationContext,"Špatně!", Toast.LENGTH_SHORT).show()
+                    makeSound("wronganswer")
                     finish()
                 }
             }
