@@ -60,10 +60,11 @@ open class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         hideNavigationBar()
+        playBackgroundSound()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onPause() {
+        super.onPause()
         stopBackgroundSound()
     }
 
@@ -103,12 +104,8 @@ open class MainActivity : AppCompatActivity() {
 
     /**
      * This method stops the BackgroundMusicService
-     * It also checks the user preferences state
      */
     fun stopBackgroundSound() {
-        if (!checkPreferences("MUSICOFF")) {
-            return
-        }
         val intent = Intent(this@MainActivity, BackgroundMusicService::class.java)
         stopService(intent)
     }

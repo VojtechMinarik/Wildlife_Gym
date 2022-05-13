@@ -57,7 +57,7 @@ class ShadowActivity : MainActivity() {
                 "quiz" -> currpoints = db.databaseDao().getResQuiz(animal)
             }
             if (currpoints == 0) {
-                db.databaseDao().updateAnimal(Animal(db.databaseDao().getId(animal), animal, db.databaseDao().getPoints(animal) + 1, db.databaseDao().getResQuiz(animal) + pointquiz, db.databaseDao().getResShadow(animal) + pointshadow, db.databaseDao().getResDifference(animal) + pointdifference, db.databaseDao().getResMemory(animal) + pointmemory))
+                db.databaseDao().updateAnimal(Animal(animal, db.databaseDao().getPoints(animal) + 1, db.databaseDao().getResQuiz(animal) + pointquiz, db.databaseDao().getResShadow(animal) + pointshadow, db.databaseDao().getResDifference(animal) + pointdifference, db.databaseDao().getResMemory(animal) + pointmemory, db.databaseDao().getResVideo(animal), db.databaseDao().getResPoem(animal), db.databaseDao().getResEncyclopedia(animal)))
             }
         }.start()
     }

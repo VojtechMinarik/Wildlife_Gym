@@ -8,8 +8,8 @@ import com.example.wildlifegym.R
 
 class BackgroundMusicService : Service() {
     internal lateinit var player: MediaPlayer
-    override fun onBind(arg0: Intent): IBinder? {
 
+    override fun onBind(arg0: Intent): IBinder? {
         return null
     }
 
@@ -17,7 +17,7 @@ class BackgroundMusicService : Service() {
         super.onCreate()
         player = MediaPlayer.create(this, R.raw.happy_mistake);
         player.isLooping = true // Set looping
-        player.setVolume(100f, 100f)
+        player.setVolume(75f, 75f)
 
     }
 
@@ -54,13 +54,5 @@ class BackgroundMusicService : Service() {
 
     companion object {
         private val TAG: String? = null
-    }
-
-    fun lowerVolume() {
-        player.setVolume(50f, 50f)
-    }
-
-    fun raiseVolume() {
-        player.setVolume(100f, 100f)
     }
 }
