@@ -5,6 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
+
+/**
+ * This class defines an AppDatabase class to hold the database.
+ * AppDatabase defines the database configuration and serves as the app's main access point to the persisted data.
+ */
 @Database(entities = [Animal::class], version = 1, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
 

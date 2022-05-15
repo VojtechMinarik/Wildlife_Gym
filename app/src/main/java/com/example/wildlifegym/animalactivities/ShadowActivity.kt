@@ -11,6 +11,7 @@ import com.example.wildlifegym.R
  * It lets the user play the shadow game
  */
 class ShadowActivity : MainActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shadow)

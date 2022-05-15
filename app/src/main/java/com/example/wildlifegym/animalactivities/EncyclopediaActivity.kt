@@ -10,6 +10,7 @@ import com.example.wildlifegym.R
  * It lets the user explore the items connected to the animal
  */
 class EncyclopediaActivity : MainActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_encyclopedia)
