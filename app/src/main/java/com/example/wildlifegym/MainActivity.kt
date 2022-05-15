@@ -13,7 +13,9 @@ import android.content.SharedPreferences
 import android.media.MediaPlayer
 import android.view.View
 import android.widget.ImageButton
-import com.example.wildlifegym.services.BackgroundMusicService
+import com.example.wildlifegym.services.MusicService
+import com.example.wildlifegym.utils.Animal
+import com.example.wildlifegym.utils.AppDatabase
 
 /**
  * This is the Main activity
@@ -52,19 +54,27 @@ open class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
+        /** Hide the navigation bar */
         hideNavigationBar()
 
+        /** Start background music, if allowed */
         playBackgroundSound()
     }
 
     override fun onResume() {
         super.onResume()
+
+        /** Hide the navigation bar */
         hideNavigationBar()
+
+        /** Start background music, if allowed */
         playBackgroundSound()
     }
 
     override fun onPause() {
         super.onPause()
+
+        /** Stop background music */
         stopBackgroundSound()
     }
 
@@ -98,7 +108,7 @@ open class MainActivity : AppCompatActivity() {
         if (checkPreferences("MUSICOFF")) {
             return
         }
-        val intent = Intent(this@MainActivity, BackgroundMusicService::class.java)
+        val intent = Intent(this@MainActivity, MusicService::class.java)
         startService(intent)
     }
 
@@ -106,7 +116,7 @@ open class MainActivity : AppCompatActivity() {
      * This method stops the BackgroundMusicService
      */
     fun stopBackgroundSound() {
-        val intent = Intent(this@MainActivity, BackgroundMusicService::class.java)
+        val intent = Intent(this@MainActivity, MusicService::class.java)
         stopService(intent)
     }
 
@@ -130,7 +140,7 @@ open class MainActivity : AppCompatActivity() {
      * This method plays a sound of the given id from the raw folder using mediaPlayer
      * @param resId An id of the raw sound
      */
-    private fun playSound(resId: Int) {
+    fun playSound(resId: Int) {
         val assetFileDescriptor = this.resources.openRawResourceFd(resId) ?: return
         mediaPlayer.run {
             reset()
@@ -149,5 +159,40 @@ open class MainActivity : AppCompatActivity() {
             controller.hide(WindowInsetsCompat.Type.systemBars())
             controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
+    }
+
+    /**
+     * This method adds given amount of points to each games record in the database
+     * In case the game is already finished, it does nothing
+     *
+     * @param animal The animal name as a String
+     * @param currGame The name of current game as a String
+     * @param pointMemory Number of points to be added to the Memory record
+     * @param pointDifference Number of points to be added to the Difference record
+     * @param pointShadow Number of points to be added to the Shadow record
+     * @param pointQuiz Number of points to be added to the Quiz record
+     */
+    fun addPoints(animal: String, currGame: String, pointMemory: Int, pointDifference: Int, pointShadow: Int, pointQuiz: Int) {
+        Thread {
+            val db = AppDatabase.getDatabase(this)
+            var currPoints = 0
+            when (currGame) {
+                "memory" -> currPoints = db.databaseDao().getResMemory(animal)
+                "difference" -> currPoints = db.databaseDao().getResDifference(animal)
+                "shadow" -> currPoints = db.databaseDao().getResShadow(animal)
+                "quiz" -> currPoints = db.databaseDao().getResQuiz(animal)
+            }
+            if (currPoints == 0) {
+                db.databaseDao().updateAnimal(Animal(animal,
+                    db.databaseDao().getPoints(animal) + 1,
+                    db.databaseDao().getResQuiz(animal) + pointQuiz,
+                    db.databaseDao().getResShadow(animal) + pointShadow,
+                    db.databaseDao().getResDifference(animal) + pointDifference,
+                    db.databaseDao().getResMemory(animal) + pointMemory,
+                    db.databaseDao().getResVideo(animal),
+                    db.databaseDao().getResPoem(animal),
+                    db.databaseDao().getResEncyclopedia(animal)))
+            }
+        }.start()
     }
 }

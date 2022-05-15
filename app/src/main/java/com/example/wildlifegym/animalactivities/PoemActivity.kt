@@ -1,65 +1,83 @@
 package com.example.wildlifegym.animalactivities
 
 import android.media.MediaPlayer
-import android.os.Build
 import android.os.Bundle
 import android.widget.ImageButton
-import androidx.annotation.RequiresApi
 import com.example.wildlifegym.MainActivity
 import com.example.wildlifegym.R
 
-@RequiresApi(Build.VERSION_CODES.R)
+/**
+ * This is the Poem activity
+ * It lets the user play the poem for the currently selected animal
+ */
 class PoemActivity : MainActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_poem)
-
-        hideNavigationBar()
-
-        val buttonpoemback = this.findViewById<ImageButton>(R.id.image_button_poem_back)
-        buttonpoemback.setOnClickListener {
-            makeSound("button")
-
-            finish()
-        }
-
-        val animal = intent.getStringExtra("animal")
-
-        val buttonpoemplay = this.findViewById<ImageButton>(R.id.image_button_poem_play)
-        buttonpoemplay.setOnClickListener {
-            makeSound("button")
-
-            when (animal) {
-                "crocodile" -> playPoem(R.raw.crocodilemp3)
-                "cancer" -> playPoem(R.raw.cancermp3)
-                "stork" -> playPoem(R.raw.storkmp3)
-                "dolphin" -> playPoem(R.raw.dolphinmp3)
-                "flamengo" -> playPoem(R.raw.flamengomp3)
-                "penguin" -> playPoem(R.raw.penguinmp3)
-                else -> {
-                    playPoem(R.raw.crocodilemp3)
-                }
-            }
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        poemPlayer.release()
-    }
-
+    /**
+     * Initialize the mediaPlayer for playing poems
+     * Set listeners to make the player close after finishing
+     */
     private val poemPlayer = MediaPlayer().apply {
         setOnPreparedListener { start() }
         setOnCompletionListener { reset() }
     }
 
-    private fun playPoem(rawResId: Int) {
-        val assetFileDescriptor = this.resources.openRawResourceFd(rawResId) ?: return
-        poemPlayer.run {
-            reset()
-            setDataSource(assetFileDescriptor.fileDescriptor, assetFileDescriptor.startOffset, assetFileDescriptor.declaredLength)
-            prepareAsync()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_poem)
+
+        /** Hide the navigation bar */
+        hideNavigationBar()
+
+        /** Set up all the buttons available on this fragment */
+        val buttonPoemBack = this.findViewById<ImageButton>(R.id.image_button_poem_back)
+        val buttonPoemPlay = this.findViewById<ImageButton>(R.id.image_button_poem_play)
+
+        /**
+         * Collect the argument passed as an intent from the Animal fragment
+         * It contains the name of the "current" animal as String
+         */
+        val animal = intent.getStringExtra("animal")
+
+        /**
+         * Set up the onClickListeners for all of the buttons available
+         *
+         * buttonPoemBack navigates back to the Animal fragment
+         * buttonPoemPlay plays the poem for current animal
+         */
+        buttonPoemBack.setOnClickListener {
+            makeSound("button")
+            finish()
+        }
+        buttonPoemPlay.setOnClickListener {
+            makeSound("button")
+            playPoem(resources.getIdentifier("poem_${animal}", "raw", this.packageName))
+        }
+    }
+
+    /**
+     * This method makes sure the player is released after closing this activity
+     */
+    override fun onDestroy() {
+        super.onDestroy()
+        poemPlayer.release()
+    }
+
+    /**
+     * This method plays a poem defined by the parameter
+     * If the player is already playing, it is paused
+     *
+     * @param resId An id of the raw poem file
+     */
+    private fun playPoem(resId: Int) {
+        val assetFileDescriptor = this.resources.openRawResourceFd(resId) ?: return
+        if (poemPlayer.isPlaying) {
+            poemPlayer.pause()
+        } else {
+            poemPlayer.run {
+                reset()
+                setDataSource(assetFileDescriptor.fileDescriptor, assetFileDescriptor.startOffset, assetFileDescriptor.declaredLength)
+                prepareAsync()
+            }
         }
     }
 }

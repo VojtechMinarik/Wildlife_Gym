@@ -48,13 +48,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/image_button_difference_01"
+                android:id="@+id/image_button_difference_flamingo_01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:scaleX="0.6"
                 android:scaleY="0.6"
                 android:src="@drawable/difference_button_flamingo_01"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.03"
@@ -63,13 +64,14 @@
                 app:layout_constraintVertical_bias="0.73" />
 
             <ImageButton
-                android:id="@+id/image_button_difference_02"
+                android:id="@+id/image_button_difference_flamingo_02"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:scaleX="0.6"
                 android:scaleY="0.6"
                 android:src="@drawable/difference_button_flamingo_02"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -78,13 +80,14 @@
                 app:layout_constraintVertical_bias="0.060000002" />
 
             <ImageButton
-                android:id="@+id/image_button_difference_03"
+                android:id="@+id/image_button_difference_flamingo_03"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:scaleX="0.6"
                 android:scaleY="0.6"
                 android:src="@drawable/difference_button_flamingo_03"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.56"
@@ -93,13 +96,14 @@
                 app:layout_constraintVertical_bias="0.7" />
 
             <ImageButton
-                android:id="@+id/image_button_difference_04"
+                android:id="@+id/image_button_difference_flamingo_04"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:scaleX="1"
                 android:scaleY="1"
                 android:src="@drawable/difference_button_flamingo_04"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -108,13 +112,14 @@
                 app:layout_constraintVertical_bias="0.07999998" />
 
             <ImageButton
-                android:id="@+id/image_button_difference_05"
+                android:id="@+id/image_button_difference_flamingo_05"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:scaleX="0.6"
                 android:scaleY="0.6"
                 android:src="@drawable/difference_button_flamingo_05"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -153,7 +158,7 @@
 
 
     <ImageButton
-        android:id="@+id/image_button_memory_back"
+        android:id="@+id/image_button_difference_back"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:background="@null"

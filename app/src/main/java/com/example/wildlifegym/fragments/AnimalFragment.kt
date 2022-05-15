@@ -54,14 +54,14 @@ class AnimalFragment : Fragment() {
         /**
          * Set up the onClickListeners for all of the buttons available
          *
-         * buttonAnimalBack navigates back to the Menu Fragment
-         * buttonAnimalMemory checks if the Memory activity is available and starts it
-         * buttonAnimalDifference checks if the Difference activity is available and starts it
-         * buttonAnimalShadow checks if the Shadow activity is available and starts it
-         * buttonAnimalQuiz checks if the Quiz activity is available and starts it
-         * buttonAnimalVideo checks if the Video activity is available and starts it
-         * buttonAnimalPoem checks if the Poem activity is available and starts it
-         * buttonAnimalEncyclopedia checks if the Encyclopedia activity is available and starts it
+         * buttonAnimalBack navigates back to the Menu fragment
+         * buttonAnimalMemory checks if the Memory activity is available and starts it with the added animal name as intent
+         * buttonAnimalDifference checks if the Difference activity is available and starts it with the added animal name as intent
+         * buttonAnimalShadow checks if the Shadow activity is available and starts it with the added animal name as intent
+         * buttonAnimalQuiz checks if the Quiz activity is available and starts it with the added animal name as intent
+         * buttonAnimalVideo checks if the Video activity is available and starts it with the added animal name as intent
+         * buttonAnimalPoem checks if the Poem activity is available and starts it with the added animal name as intent
+         * buttonAnimalEncyclopedia checks if the Encyclopedia activity is available and starts it with the added animal name as intent
          */
         buttonAnimalBack.setOnClickListener {
             (activity as MainActivity).makeSound("button")
