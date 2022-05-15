@@ -1,4 +1,4 @@
-package com.example.wildlifegym
+package com.example.wildlifegym.activities
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +13,7 @@ import android.content.SharedPreferences
 import android.media.MediaPlayer
 import android.view.View
 import android.widget.ImageButton
+import com.example.wildlifegym.R
 import com.example.wildlifegym.services.MusicService
 import com.example.wildlifegym.utils.Animal
 import com.example.wildlifegym.utils.AppDatabase

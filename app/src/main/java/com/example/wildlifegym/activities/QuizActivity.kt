@@ -1,10 +1,9 @@
-package com.example.wildlifegym.animalactivities
+package com.example.wildlifegym.activities
 
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
-import com.example.wildlifegym.MainActivity
 import com.example.wildlifegym.R
 
 /**

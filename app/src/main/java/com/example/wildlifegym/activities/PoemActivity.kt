@@ -1,9 +1,8 @@
-package com.example.wildlifegym.animalactivities
+package com.example.wildlifegym.activities
 
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.ImageButton
-import com.example.wildlifegym.MainActivity
 import com.example.wildlifegym.R
 
 /**

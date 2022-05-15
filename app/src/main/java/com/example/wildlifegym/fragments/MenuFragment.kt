@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import com.example.wildlifegym.MainActivity
+import com.example.wildlifegym.activities.MainActivity
 import com.example.wildlifegym.R
 
 /**

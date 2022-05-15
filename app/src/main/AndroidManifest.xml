@@ -10,30 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WildlifeGym">
         <activity
-            android:name=".animalactivities.QuizActivity"
+            android:name=".activities.QuizActivity"
             android:exported="false" />
         <activity
-            android:name=".animalactivities.ShadowActivity"
+            android:name=".activities.ShadowActivity"
             android:exported="false" />
         <activity
-            android:name=".animalactivities.DifferenceActivity"
+            android:name=".activities.DifferenceActivity"
             android:exported="false" />
         <activity
-            android:name=".animalactivities.EncyclopediaActivity"
+            android:name=".activities.EncyclopediaActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".animalactivities.MemoryActivity"
+            android:name=".activities.MemoryActivity"
             android:exported="false" />
         <activity
-            android:name=".animalactivities.PoemActivity"
+            android:name=".activities.PoemActivity"
             android:exported="false" />
         <activity
-            android:name=".animalactivities.VideoActivity"
+            android:name=".activities.VideoActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
