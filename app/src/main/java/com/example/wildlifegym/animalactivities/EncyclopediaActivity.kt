@@ -81,7 +81,7 @@ class EncyclopediaActivity : MainActivity() {
      */
     private fun playPicture(animal: String, pictureNumber: Int) {
         val sounds = when (animal) {
-            "flamingo" -> arrayOf(R.raw.buttonclick, R.raw.buttonclick, R.raw.buttonclick, R.raw.buttonclick)
+            "flamingo" -> arrayOf(R.raw.flamingo_enc_04, R.raw.flamingo_enc_03, R.raw.flamingo_enc_01, R.raw.flamingo_enc_02)
             else -> arrayOf(R.raw.buttonclick, R.raw.buttonclick, R.raw.buttonclick, R.raw.buttonclick)
         }
         playSound(sounds[pictureNumber])

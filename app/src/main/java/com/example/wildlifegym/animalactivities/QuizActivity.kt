@@ -58,17 +58,17 @@ class QuizActivity : MainActivity() {
                 if (i == answers[round]) {
                     if (round == 2) {
                         Toast.makeText(applicationContext,"✅", Toast.LENGTH_SHORT).show()
-                        makeSound("rightanswer")
+                        makeSound("rightAnswer")
                         addPoints(animal, "quiz", 0,0,0,1)
                         finish()
                     } else {
                         round++
-                        makeSound("rightanswer")
+                        makeSound("rightAnswer")
                         changeQuestion(animal, round)
                     }
                 } else {
                     Toast.makeText(applicationContext,"❎", Toast.LENGTH_SHORT).show()
-                    makeSound("wronganswer")
+                    makeSound("wrongAnswer")
                     finish()
                 }
             }

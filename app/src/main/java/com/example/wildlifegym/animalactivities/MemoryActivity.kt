@@ -113,7 +113,7 @@ class MemoryActivity : MainActivity() {
                 /** Finish the game if all pairs are found */
                 if (finished) {
                     Toast.makeText(applicationContext,"✅", Toast.LENGTH_SHORT).show()
-                    makeSound("rightanswer")
+                    makeSound("rightAnswer")
                     addPoints(animal, "memory", 1,0,0,0)
                     finish()
                 }

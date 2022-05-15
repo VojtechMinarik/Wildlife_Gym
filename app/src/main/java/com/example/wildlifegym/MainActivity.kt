@@ -130,8 +130,8 @@ open class MainActivity : AppCompatActivity() {
         }
         when (soundName) {
             "button" -> playSound(R.raw.buttonclick)
-            "rightanswer" -> playSound(R.raw.rightanswer)
-            "wronganswer" -> playSound(R.raw.badanswer)
+            "rightAnswer" -> playSound(R.raw.rightanswer)
+            "wrongAnswer" -> playSound(R.raw.badanswer)
             else -> return
         }
     }

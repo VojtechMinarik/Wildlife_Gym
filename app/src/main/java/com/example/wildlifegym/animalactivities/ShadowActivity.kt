@@ -67,12 +67,12 @@ class ShadowActivity : MainActivity() {
             buttons[i].setOnClickListener {
                 if (i == rightAnswer) {
                     Toast.makeText(applicationContext,"✅", Toast.LENGTH_SHORT).show()
-                    makeSound("rightanswer")
+                    makeSound("rightAnswer")
                     addPoints(animal, "shadow", 0,0,1,0)
                     finish()
                 } else {
                     Toast.makeText(applicationContext,"❎", Toast.LENGTH_SHORT).show()
-                    makeSound("wronganswer")
+                    makeSound("wrongAnswer")
                     finish()
                 }
             }
